@@ -33,15 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isJumping = false;
     let velocity = 0;
-    let gravity = 0.4;
-    let jumpForce = -10;
+    let gravity = 0.5;
+    let jumpForce = -9;
     // Removed movement variables since player now jumps in place
     let originalPosition = 50; // Original left position
     let isGameOver = false;
     let score = 0;
     let highscore = localStorage.getItem("loveRunnerHighscore") || 0;
     let obstacleIntervals = [];
-    let obstacleSpeed = 3; // Slowed down from 6 to 3
+    let obstacleSpeed = 3;
+    let baseObstacleSpeed = 3;
+    let obstacleSpeed = baseObstacleSpeed;
+                                            // Slowed down from 6 to 3
 
     function initGame() {
         highscoreDisplay.textContent = `Highscore: ${highscore}`;
@@ -138,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         obstacleIntervals.push(moveInterval);
 
         if (!isGameOver) {
-            setTimeout(createObstacle, 3000 + Math.random() * 3000);
+            setTimeout(createObstacle, 5000 + Math.random() * 4000);
         }
     }
 
@@ -172,12 +175,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 origin: { y: 0.6 },
                 colors: ['#ff4081', '#d81b60', '#ffebee', '#f8bbd0', '#c2185b']
             });
-            
-            if (shieldSound) {
+            if (score % 5 === 0) {
+    obstacleSpeed += 0.5; // Increase speed every 5 points
+
+          if (shieldSound) {
                 shieldSound.play().catch(e => console.log("Audio error:", e));
             }
         }
     }
+}
 
     function gameOver() {
         if (isGameOver) return;
