@@ -41,11 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
     let highscore = localStorage.getItem("loveRunnerHighscore") || 0;
     let obstacleIntervals = [];
-    let obstacleSpeed = 3;
-    let baseObstacleSpeed = 3;
-    let obstacleSpeed = baseObstacleSpeed;
-                                            // Slowed down from 6 to 3
-
+    let obstacleSpeed = 3; // Slowed down from 6 to 3
+    
     function initGame() {
         highscoreDisplay.textContent = `Highscore: ${highscore}`;
         if (restartButton) restartButton.style.display = 'none';
