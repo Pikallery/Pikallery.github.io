@@ -161,7 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 colors: ['#ff4081', '#d81b60', '#ffebee', '#f8bbd0', '#c2185b']
             });
         }
-
+         if (score % 5 === 0) {
+    obstacleSpeed += 0.5; // Increase speed every 5 points
+             
         if (score === 10) {
             secretMessage.style.display = "block";
             
@@ -172,9 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 origin: { y: 0.6 },
                 colors: ['#ff4081', '#d81b60', '#ffebee', '#f8bbd0', '#c2185b']
             });
-            if (score % 5 === 0) {
-    obstacleSpeed += 0.5; // Increase speed every 5 points
-
           if (shieldSound) {
                 shieldSound.play().catch(e => console.log("Audio error:", e));
             }
