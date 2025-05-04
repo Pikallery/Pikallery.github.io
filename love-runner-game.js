@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isJumping = false;
     let velocity = 0;
-    let gravity = 0.6;
-    let jumpForce = -12;
+    let gravity = 0.4;
+    let jumpForce = -10;
     // Removed movement variables since player now jumps in place
     let originalPosition = 50; // Original left position
     let isGameOver = false;
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         obstacleIntervals.push(moveInterval);
 
         if (!isGameOver) {
-            setTimeout(createObstacle, 2000 + Math.random() * 2000);
+            setTimeout(createObstacle, 3000 + Math.random() * 3000);
         }
     }
 
