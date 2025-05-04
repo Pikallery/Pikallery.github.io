@@ -1,0 +1,52 @@
+# Site settings
+title: Testing Websites      # The title of your website
+description: Welcome to my site! # A short description
+url: https://Pikallery.github.io  # The URL of your website
+baseurl: ""                    # Leave blank unless your site is in a subfolder
+
+# Author settings
+author:
+  name: Pikallery              # Your name
+  email: samalsaipradyumna@gmail.com
+
+# Theme settings
+theme: minima                  # Replace 'minima' with the theme you want to use
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+# Build settings
+plugins:
+  - jekyll-feed                # Example plugin for RSS feed
+  - jekyll-seo-tag             # Example plugin for SEO
+
+# Navigation (optional)
+menu:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Blog
+    url: /blog
+
+# Social media links (optional)
+social:
+  twitter: your-twitter-handle
+  github: your-github-username
+  linkedin: your-linkedin-username
+
+# Pagination (optional)
+paginate: 5                    # Number of posts per page
+
+# Exclude files/folders from the build
+exclude:
+  - README.md
+  - LICENSE
+
+# Include additional files
+include:
+  - .htaccess
+
+# Custom variables (optional)
+custom_var: "Custom Value"
