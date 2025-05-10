@@ -18,6 +18,8 @@
       --light-pink: #fff0f5;
       --lighter-pink: #fff9fb;
       --shadow: rgba(216, 27, 96, 0.2);
+      --purple: #6c5ce7;
+      --light-purple: #a29bfe;
     }
 
     body {
@@ -36,7 +38,6 @@
       padding: 2rem 0;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #ff4081, #d81b60);
     }
 
     header img {
@@ -141,21 +142,29 @@
       color: var(--pink);
     }
 
+    /* NEW JUMP BUTTON STYLES - From Uiverse.io by krlozCJ */
     #jumpButton {
-      background: linear-gradient(to right, var(--pink), var(--dark-pink));
-      color: white;
       border: none;
+      outline: none;
+      background-color: var(--purple);
       padding: 15px 30px;
-      border-radius: 50px;
       font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      border-radius: 5px;
+      transition: all ease 0.1s;
+      box-shadow: 0px 5px 0px 0px var(--light-purple);
       margin: 1rem auto;
       display: block;
       cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 8px var(--shadow);
-      font-weight: 600;
     }
 
+    #jumpButton:active {
+      transform: translateY(5px);
+      box-shadow: 0px 0px 0px 0px var(--light-purple);
+    }
+
+    /* Restart Button */
     #restartButton {
       background-color: white;
       color: black;
@@ -179,11 +188,6 @@
     #restartButton:active {
       transform: translateY(2px) translateX(1px);
       box-shadow: 0 0 0 0 black;
-    }
-
-    #jumpButton:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px var(--shadow);
     }
 
     .memory {
@@ -378,7 +382,7 @@
     <div id="player"></div>
   </div>
 
-  <button id="jumpButton">TAP TO JUMP!</button>
+  <button id="jumpButton">Tap to Jump!</button>
   <button id="restartButton">Play Again</button>
   <div id="score" style="text-align: center; font-size: 1.2rem;">Score: 0</div>
   <div id="highscore" style="text-align: center; margin-bottom: 2rem;">Highscore: 0</div>
