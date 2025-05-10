@@ -157,21 +157,31 @@
     }
 
     #restartButton {
-      background: linear-gradient(to right, var(--pink), var(--dark-pink));
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 50px;
-      font-size: 1.2rem;
+      background-color: white;
+      color: black;
+      border-radius: 10em;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 1em 2em;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid black;
+      box-shadow: 0 0 0 0 black;
       margin: 1rem auto;
       display: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 4px 8px var(--shadow);
-      font-weight: 600;
     }
 
-    #jumpButton:hover, #restartButton:hover {
+    #restartButton:hover {
+      transform: translateY(-4px) translateX(-2px);
+      box-shadow: 2px 5px 0 0 black;
+    }
+
+    #restartButton:active {
+      transform: translateY(2px) translateX(1px);
+      box-shadow: 0 0 0 0 black;
+    }
+
+    #jumpButton:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 12px var(--shadow);
     }
@@ -369,7 +379,7 @@
   </div>
 
   <button id="jumpButton">TAP TO JUMP!</button>
-  <button id="restartButton" style="display: none;">Play Again</button>
+  <button id="restartButton">Play Again</button>
   <div id="score" style="text-align: center; font-size: 1.2rem;">Score: 0</div>
   <div id="highscore" style="text-align: center; margin-bottom: 2rem;">Highscore: 0</div>
 
